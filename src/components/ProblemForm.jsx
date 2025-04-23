@@ -26,7 +26,7 @@ const ProblemForm = ({ chefId, fetchProblems }) => {
   useEffect(() => {
     const fetchPredefinedProblems = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/problems/predefined");
+        const response = await axios.get("https://qhys42-3001.csb.app/problems/predefined");
         setPredefinedProblems(response.data);
       } catch (error) {
         console.error("Error fetching predefined problems:", error);
@@ -70,7 +70,7 @@ const ProblemForm = ({ chefId, fetchProblems }) => {
         };
       }
 
-      await axios.post("http://localhost:3001/problems", problemData);
+      await axios.post("https://qhys42-3001.csb.app/problems", problemData);
       alert("Problem reported successfully!");
       resetForm();
       if (fetchProblems) fetchProblems();
