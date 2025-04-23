@@ -19,7 +19,7 @@ const PredefinedProblems = () => {
   const fetchPredefinedProblems = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:3001/problems/predefined");
+      const response = await axios.get("https://qhys42-3001.csb.app/problems/predefined");
       setProblems(response.data);
     } catch (error) {
       console.error("Error fetching predefined problems:", error);
@@ -41,7 +41,7 @@ const PredefinedProblems = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:3001/problems/predefined", {
+      await axios.post("https://qhys42-3001.csb.app/problems/predefined", {
         title: newProblem.title,
         type: newProblem.type,
         description: newProblem.description || newProblem.title // Fallback to title if description empty
@@ -60,7 +60,7 @@ const PredefinedProblems = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this predefined problem?")) {
       try {
-        await axios.delete(`http://localhost:3001/problems/predefined/${id}`);
+        await axios.delete(`https://qhys42-3001.csb.app/problems/predefined/${id}`);
         alert("Predefined problem deleted successfully!");
         fetchPredefinedProblems();
       } catch (error) {
