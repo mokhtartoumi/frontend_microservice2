@@ -12,7 +12,7 @@ const TechnicienProblemList = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:3001/problems?assignedTechnician=${technicienId}`
+        `https://qhys42-3001.csb.app/problems?assignedTechnician=${technicienId}`
       );
       setProblems(response.data);
     } catch (error) {
@@ -25,7 +25,7 @@ const TechnicienProblemList = () => {
 
   const acceptProblem = async (problemId) => {
     try {
-      await axios.put(`http://localhost:3001/problems/${problemId}`, {
+      await axios.put(`https://qhys42-3001.csb.app/problems/${problemId}`, {
         status: "progressing"
       });
       fetchAssignedProblems(); // Refresh the list
@@ -37,7 +37,7 @@ const TechnicienProblemList = () => {
 
   const markAsSolved = async (problemId) => {
     try {
-      await axios.put(`http://localhost:3001/problems/${problemId}`, {
+      await axios.put(`https://qhys42-3001.csb.app/problems/${problemId}`, {
         status: "solved"
       });
       fetchAssignedProblems(); // Refresh the list
