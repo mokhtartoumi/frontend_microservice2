@@ -1,0 +1,140 @@
+/* Main Container with Background Photo */
+.problem-form-container {
+  width: 800px;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Grid Layout - 4 Problems per Row */
+.predefined-problems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+/* Problem Cards */
+.problem-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons */
+.problem-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.problem-icon.large {
+  font-size: 48px;
+}
+
+/* Text Styling */
+.problem-info h4 {
+  margin: 5px 0;
+  color: #333;
+}
+
+.problem-type {
+  color: #666;
+  font-size: 12px;
+}
+
+/* Buttons */
+.custom-problem-btn,
+.form-actions button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.custom-problem-btn {
+  width: 100%;
+  background: #3498db;
+  color: white;
+  margin-top: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.form-actions button:first-child {
+  background: #2ecc71;
+  color: white;
+}
+
+.form-actions button:last-child {
+  background: #e74c3c;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .problem-form-container {
+    width: 95%;
+  }
+  .predefined-problems {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .predefined-problems {
+    grid-template-columns: 1fr;
+  }
+}
+/* Center all form content */
+
+  
+  /* Textarea container styling */
+  .form-group {
+    width: 90%; /* Controls width */
+    max-width: 600px; /* Maximum width */
+    margin: 20px auto; /* Vertical spacing + horizontal centering */
+    text-align: center; /* Center label */
+  }
+  
+  /* Textarea styling */
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    display: block; /* Ensures proper centering */
+    margin: 0 auto; /* Horizontal centering */
+  }
+  
+  /* Custom problem textarea */
+  .form-group:first-child textarea {
+    min-height: 120px;
+    background: rgba(255,255,255,0.9);
+  }
+  
+  /* Additional details textarea */
+  .form-group:last-child textarea {
+    min-height: 80px;
+    background: rgba(255,255,255,0.9);
+  }

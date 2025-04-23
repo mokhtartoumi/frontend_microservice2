@@ -1,0 +1,247 @@
+.problem-list-container {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.problem-list-container h2 {
+  color: #1a1919;
+  margin: 0 0 2rem 0;
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid #4cc9f0;
+  border-radius: 0 8px 8px 0;
+}
+
+.problem-list-container h2::before {
+  content: '📊';
+  font-size: 1.5rem;
+}
+
+.problems-table-container {
+  overflow-x: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.problems-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.problems-table th {
+  background-color: #f8f9fa;
+  padding: 18px 25px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+  color: #495057;
+  font-size: 1.15rem;
+}
+
+.problems-table td {
+  padding: 18px 25px;
+  border-bottom: 1px solid #e9ecef;
+  color: #212529;
+  vertical-align: middle;
+  position: relative;
+}
+
+.problems-table tr:last-child td {
+  border-bottom: none;
+}
+
+.problems-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Status and Actions Container */
+.status-actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Status Styles */
+.problem-status {
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.status-waiting {
+  color: #c62828;
+  background-color: rgba(255, 235, 238, 0.8);
+  border: 1px solid rgba(198, 40, 40, 0.2);
+}
+
+.status-progress {
+  color: #e65100;
+  background-color: rgba(255, 248, 225, 0.8);
+  border: 1px solid rgba(230, 81, 0, 0.2);
+}
+
+.status-solved {
+  color: #2e7d32;
+  background-color: rgba(232, 245, 233, 0.8);
+  border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+/* Action Buttons */
+.problem-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.solve-btn {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.solve-btn:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.delete-btn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.no-problems {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* Table Column Widths */
+.problems-table th:nth-child(1),
+.problems-table td:nth-child(1) {
+  width: 20%;
+}
+
+.problems-table th:nth-child(2),
+.problems-table td:nth-child(2) {
+  width: 35%;
+}
+
+.problems-table th:nth-child(3),
+.problems-table td:nth-child(3) {
+  width: 25%;
+}
+
+.problems-table th:nth-child(4),
+.problems-table td:nth-child(4) {
+  width: 20%;
+  text-align: right;
+}
+
+@media (max-width: 992px) {
+  .problems-table-container {
+    padding: 20px;
+  }
+  
+  .problems-table th,
+  .problems-table td {
+    padding: 15px 20px;
+  }
+  
+  .problem-status {
+    padding: 8px 15px;
+    min-width: 100px;
+  }
+  
+  .solve-btn, 
+  .delete-btn {
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .problem-list-container {
+    padding: 20px 15px;
+  }
+  
+  .problems-table-container {
+    padding: 15px;
+  }
+  
+  .problems-table {
+    font-size: 1rem;
+  }
+  
+  .problems-table th,
+  .problems-table td {
+    padding: 12px 15px;
+  }
+  
+  .status-actions-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .problem-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .problem-status {
+    width: 100%;
+  }
+}
