@@ -12,7 +12,7 @@ const ProblemList = () => {
   const fetchProblems = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:3001/problems?chefId=${chefId}`);
+      const response = await axios.get(`https://qhys42-3001.csb.app/problems?chefId=${chefId}`);
       setProblems(response.data);
     } catch (error) {
       console.error("Error fetching problems:", error);
@@ -24,7 +24,7 @@ const ProblemList = () => {
 
   const markAsSolved = async (problemId) => {
     try {
-      await axios.put(`http://localhost:3001/problems/${problemId}`, {
+      await axios.put(`https://qhys42-3001.csb.app/problems/${problemId}`, {
         status: "solved"
       });
       fetchProblems(); // Refresh the list
@@ -37,7 +37,7 @@ const ProblemList = () => {
   const deleteProblem = async (problemId) => {
     if (window.confirm("Are you sure you want to delete this problem?")) {
       try {
-        await axios.delete(`http://localhost:3001/problems/${problemId}`);
+        await axios.delete(`https://qhys42-3001.csb.app/problems/${problemId}`);
         fetchProblems(); // Refresh the list
       } catch (error) {
         console.error("Error deleting problem:", error);
